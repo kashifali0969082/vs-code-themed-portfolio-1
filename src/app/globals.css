@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+DARK COLOR SCHEME 
+#24262b - hsl(223 8.9% 15.5%) - Background
+#181a1f - hsl(223 12.7% 10.8%) - Card
+#484b59 - hsl(229 10.6% 31.6%) - Button Active
+#373a43 - hsl(225 9.8% 23.9%) - Hover
+#3f4350 - hsl(226 11.9% 28%) - Active Hover
+#fbfbfb - hsl(0 0% 98.4%) - Foreground
+*/
+
+/* 
+LIGHT COLOR SCHEME 
+#edeff2 - hsl(216 16.1% 93.9%) - Background
+#ffffff - hsl(0 0% 100%) - Card
+#ebedf0 - hsl(0 0% 84.9%) - Hover
+#16181a - hsl(210 8.3% 9.4%) - Foreground
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 223 8.9% 15.5%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 223 12.7% 10.8%;
+
+    --active: 229 10.6% 31.6%;
+    --active-hover: 226 11.9% 28%;
+    --hover: 225 9.8% 23.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 223 8.9% 15.5%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 223 8.9% 15.5%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 223 8.9% 15.5%;
+    --foreground: 0 0% 98.4%;
+
+    --card: 223 12.7% 10.8%;
+    --card-foreground: 0 0% 98.4%;
+
+    --active: 229 10.6% 31.6%;
+    --hover: 225 9.8% 23.9%;
+    --active-hover: 226 11.9% 28%;
+
+    --popover: 223 12.7% 10.8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.btn {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 25px 80px;
+  display: inline-block;
+  margin: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* Pseudo elements for icons */
+.btn:before,
+.icon-heart:after,
+.icon-star:after,
+.icon-plus:after,
+.icon-file:before {
+  font-family: "icomoon";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn-3 {
+  background: #fcad26;
+  color: #fff;
+}
+
+.btn-3:hover {
+  background: #f29e0d;
+}
+
+.btn-3:active {
+  background: #f58500;
+  top: 2px;
+}
+
+.btn-3:before {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  line-height: 3;
+  font-size: 140%;
+  width: 60px;
+}
+
+.btn-3d {
+  padding: 25px 60px 25px 120px;
+  border-radius: 10px;
+}
+
+.btn-3d:before {
+  background: #fff;
+  color: #fcad26;
+  z-index: 2;
+  border-radius: 10px 0 0 10px;
+}
+
+.btn-3d:after {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  z-index: 1;
+  left: 55px;
+  top: 50%;
+  margin: -10px 0 0 -10px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.btn-3d:active:before {
+  color: #f58500;
+}
+
+.btn-3d:active {
+  top: 0;
+}
+
+.btn-3d:active:after {
+  left: 60px;
+}
